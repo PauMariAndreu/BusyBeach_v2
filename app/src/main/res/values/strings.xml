@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BusyBeach</string>
+    <string name="action_settings">Settings</string>
+    <string name="Pau">BusyBeach</string>
+    <string name="boton_de_ejectuar">Ejecutar</string>
+    <string name="title_activity_activity_buscar_playas">ActivityBuscarPlayas</string>
+</resources>
