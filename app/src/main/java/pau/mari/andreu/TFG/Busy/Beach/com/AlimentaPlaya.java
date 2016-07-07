@@ -3,6 +3,18 @@ package pau.mari.andreu.TFG.Busy.Beach.com;
 /**
  * Created by PAU on 06/04/2016.
  */
+
+
+/*
+TRABAJO FINAL DE GRADO DE PAU MARI ANDREU
+
+UNIVERSIDAD INTERNACIONAL DE LA RIOJA
+
+UNIR
+
+ */
+
+
 public class AlimentaPlaya {
     String nombre;
     String costa;

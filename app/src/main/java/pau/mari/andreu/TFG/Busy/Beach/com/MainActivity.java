@@ -17,11 +17,24 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
+/*
+TRABAJO FINAL DE GRADO DE PAU MARI ANDREU
+
+UNIVERSIDAD INTERNACIONAL DE LA RIOJA
+
+UNIR
+
+ */
+
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     ImageView imageView;
     Button boton_principal;
+    Button boton_mallorca;
+    Button boton_ibiza_form;
 
     //Creamos el imageView principal de tipo .png
     //para el contorno de la isla.
@@ -37,11 +50,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         boton_principal = (Button) findViewById(R.id.button);
 
+        boton_mallorca=(Button) findViewById(R.id.button2);
+        boton_ibiza_form=(Button) findViewById(R.id.button3);
+
         //le pasamos la funcion this para decirle el contexto que queremos
         boton_principal.setOnClickListener(this);
+        boton_mallorca.setOnClickListener(this);
+        boton_ibiza_form.setOnClickListener(this);
 
 
 
+
+        //Intent intent=new Intent(this,ActivityBuscarPlayas.class);
+        //startActivity(intent);
 
 
         /*
@@ -90,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int offsetY = 25;
         Context context = getApplicationContext();
         CharSequence text = "Cargando datos...";
-        int duration = Toast.LENGTH_SHORT;
+        int duration = Toast.LENGTH_LONG;
 
 
         switch (v.getId()){
@@ -107,6 +128,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent=new Intent(this,ActivityBuscarPlayas.class);
                 startActivity(intent);
                 break;
+                //Intent intent=new Intent(this,ActivityFondo.class);
+                //startActivity(intent);
+                //break;
+            case R.id.button2:
+                //caso de mallorca
+                Toast toast2 = Toast.makeText(context, text, duration);
+                toast2.setGravity(Gravity.CENTER, offsetX, offsetY);
+                toast2.show();
+
+                Intent intent2=new Intent(this,ActivityMallorca.class);
+                startActivity(intent2);
+                break;
+            case R.id.button3:
+                //caso ibiza formentera
+                Toast toast3 = Toast.makeText(context, text, duration);
+                toast3.setGravity(Gravity.CENTER, offsetX, offsetY);
+                toast3.show();
+
+
+                Intent intent3=new Intent(this,ActivityIbizaFormentera.class);
+                startActivity(intent3);
+                break;
+
 
         }
     }

@@ -1,18 +1,10 @@
 package pau.mari.andreu.TFG.Busy.Beach.com;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -23,11 +15,33 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import android.graphics.Bitmap;
+        import android.graphics.BitmapFactory;
+        import android.graphics.Canvas;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.os.Environment;
+        import android.support.design.widget.FloatingActionButton;
+        import android.support.design.widget.Snackbar;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.Toolbar;
+        import android.util.Log;
+        import android.view.Gravity;
+        import android.view.View;
+        import android.widget.CheckBox;
+        import android.widget.ImageView;
+        import android.widget.TextView;
+        import android.widget.Toast;
+
+        import com.google.android.gms.appindexing.Action;
+        import com.google.android.gms.appindexing.AppIndex;
+        import com.google.android.gms.common.api.GoogleApiClient;
+
+        import java.io.BufferedReader;
+        import java.io.File;
+        import java.io.FileInputStream;
+        import java.io.InputStream;
+        import java.io.InputStreamReader;
 
 
 /*
@@ -39,7 +53,7 @@ UNIR
 
  */
 
-public class ActivityBuscarPlayas extends AppCompatActivity {
+public class ActivityMallorca extends AppCompatActivity {
 
     //test1
     ImageView imageView3, imageView4, imageView5, imageView7,imageView8;
@@ -77,14 +91,14 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_buscar_playas);
+        setContentView(R.layout.activity_activity_mallorca);
         //setContentView(R.drawable.isla_menorca_web2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //declaramos url y parseo
         //prueba pagina aemet
-        String url = "http://www.aemet.es/xml/municipios/localidad_07015.xml";
+        String url = "http://www.aemet.es/xml/municipios/localidad_07040.xml";
         //String url = "https://www.dropbox.com/s/5zbes5mdlh5fvhn/tabla_parking.xml?dl=0";
         //ojo con poner el https o el http, y con el codigo html o xml
         //String url="http://www.dropbox.com/s/z0ots93nz7m0mq2/playa1.xml?dl=0";
@@ -122,12 +136,6 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
         textView10 = (TextView) findViewById(R.id.textView10);
         textView11 = (TextView) findViewById(R.id.textView11);
         textView12 = (TextView) findViewById(R.id.textView12);
-
-
-        //GRAFICOS
-        //medusa= BitmapFactory.decodeResource(getResources(),R.drawable.medusas);
-        //canvas.drawBitmap(medusa,400,400,null);
-
 
         //funcion de setVisibility para aparecer o desaparecer iconos
         //VISIBLE INVISIBLE GONE con valores de 0,4,8 o HEXA 0x00000000 , etc.
@@ -172,10 +180,6 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
         CharSequence text = "url:";
         int duration = Toast.LENGTH_LONG;
 
-        //Toast toast = Toast.makeText(context, url, duration);
-        //toast.setGravity(Gravity.CENTER, offsetX, offsetY);
-        //toast.show();
-        //sale toast por pantalla
 
         obj = new ParsearTablaParking(url);
         obj.fetchXML();
@@ -431,6 +435,17 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
                     textView11.setText(finalKm);
                     textView8.setText(finalKm);
 
+
+                    /*
+                    private String url1="http://api.openweathermap.org/data/2.5/weather?q=";
+                    private String url2="&mode=xml";
+                    String finalUrl=url1+url+url2;
+                    txt2.setText(finalUrl);
+
+                    if(finalVent=="20"){
+                        textView4.setText("Suave");
+                    }
+                    */
                 }
                 if (!(checkboxViento.isChecked())) {
                     //imageView4.setVisibility(View.INVISIBLE);

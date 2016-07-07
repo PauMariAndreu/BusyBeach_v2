@@ -1,6 +1,21 @@
 package pau.mari.andreu.TFG.Busy.Beach.com;
 
+
 import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -39,7 +54,7 @@ UNIR
 
  */
 
-public class ActivityBuscarPlayas extends AppCompatActivity {
+public class ActivityIbizaFormentera extends AppCompatActivity {
 
     //test1
     ImageView imageView3, imageView4, imageView5, imageView7,imageView8;
@@ -54,11 +69,6 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
     float valor_parking2;
     float valor_parking3;
     public String vent1;
-
-
-    //Canvas canvas;
-    //Bitmap medusa;
-
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -77,14 +87,14 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_buscar_playas);
+        setContentView(R.layout.activity_activity_ibiza_formentera);
         //setContentView(R.drawable.isla_menorca_web2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //declaramos url y parseo
         //prueba pagina aemet
-        String url = "http://www.aemet.es/xml/municipios/localidad_07015.xml";
+        String url = "http://www.aemet.es/xml/municipios/localidad_07026.xml";
         //String url = "https://www.dropbox.com/s/5zbes5mdlh5fvhn/tabla_parking.xml?dl=0";
         //ojo con poner el https o el http, y con el codigo html o xml
         //String url="http://www.dropbox.com/s/z0ots93nz7m0mq2/playa1.xml?dl=0";
@@ -430,7 +440,6 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
                     textView6.setText(finalKm);
                     textView11.setText(finalKm);
                     textView8.setText(finalKm);
-
                 }
                 if (!(checkboxViento.isChecked())) {
                     //imageView4.setVisibility(View.INVISIBLE);
@@ -526,3 +535,4 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
         client2.disconnect();
     }
 }
+
