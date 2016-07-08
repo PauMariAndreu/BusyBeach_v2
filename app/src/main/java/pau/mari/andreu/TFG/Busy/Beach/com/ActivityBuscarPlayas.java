@@ -253,6 +253,7 @@ public class ActivityBuscarPlayas extends AppCompatActivity {
         prueba2 = Integer.parseInt(cadena2);
         System.out.println(prueba2);
 
+        
         salida=0;
         salida=(((float)prueba)/prueba2)*100;
         System.out.println(salida);
